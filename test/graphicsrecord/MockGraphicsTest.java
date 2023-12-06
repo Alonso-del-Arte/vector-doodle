@@ -146,6 +146,19 @@ public class MockGraphicsTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void testSetColorRejectsNull() {
+        Graphics g = new MockGraphics();
+        Throwable t = assertThrows(NullPointerException.class, () -> {
+            g.setColor(null);
+            System.out.println("Trying to set color to null should cause NPE");
+        });
+        String excMsg = t.getMessage();
+        assert excMsg != null : "Exception message should not be null";
+        assert !excMsg.isBlank() : "Exception message should not be blank";
+        System.out.println("\"" + excMsg + "\"");
+    }
+
 //    @Test
 //    public void testTranslate() {
 //        System.out.println("translate");
