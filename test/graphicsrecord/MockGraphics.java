@@ -236,8 +236,19 @@ public class MockGraphics extends Graphics {
         this.currColor = c;
     }
 
+    /**
+     *
+     * @param f
+     * @throws NullPointerException If <code>f</code> is null. Note that this is
+     * not how most subclasses of <code>Graphics</code> treat null colors, they
+     * instead silently ignore nulls.
+     */
     @Override
     public void setFont(Font f) {
+        if (f == null) {
+            String excMsg = "Font should not be null";
+            throw new NullPointerException(excMsg);
+        }
         // TODO: Write tests for this
     }
 
