@@ -220,11 +220,19 @@ public class MockGraphics extends Graphics {
 
     /**
      * Changes the color to be used for most drawing and filling operations.
-     * @param c The new color. For example, <code>Color.GREEN</code>.
-     * Not required to be different from the current color.
+     * @param c The new color. For example, <code>Color.GREEN</code>. Not
+     *          required to be different from the current color. Must not be
+     *          null, though.
+     * @throws NullPointerException If <code>c</code> is null. Note that this is
+     * not how most subclasses of <code>Graphics</code> treat null colors, they
+     * instead silently ignore nulls.
      */
     @Override
     public void setColor(Color c) {
+        if (c == null) {
+            String excMsg = "Color should not be null";
+            throw new NullPointerException(excMsg);
+        }
         this.currColor = c;
     }
 
