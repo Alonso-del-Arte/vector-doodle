@@ -159,6 +159,21 @@ public class MockGraphicsTest {
         System.out.println("\"" + excMsg + "\"");
     }
 
+    // TODO: Write test for setFont() with non-null parameter
+    
+    @Test
+    void testSetFontRejectsNullFont() {
+        Graphics g = new MockGraphics();
+        Throwable t = assertThrows(NullPointerException.class, () -> {
+            g.setFont(null);
+            System.out.println("Trying to set font to null should cause NPE");
+        });
+        String excMsg = t.getMessage();
+        assert excMsg != null : "Exception message should not be null";
+        assert !excMsg.isBlank() : "Exception message should not be blank";
+        System.out.println("\"" + excMsg + "\"");
+    }
+
 //    @Test
 //    public void testTranslate() {
 //        System.out.println("translate");
