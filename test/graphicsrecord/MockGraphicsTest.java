@@ -35,6 +35,14 @@ public class MockGraphicsTest {
     private static final Random RANDOM = new Random();
 
     @Test
+    void testCreate() {
+        System.out.println("create");
+        Graphics expected = new MockGraphics();
+        Graphics actual = expected.create();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testGetColor() {
         System.out.println("getColor");
         Graphics g = new MockGraphics();
