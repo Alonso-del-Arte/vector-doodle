@@ -237,8 +237,8 @@ public class MockGraphics extends Graphics {
     }
 
     /**
-     *
-     * @param f
+     * Changes the font to be used for subsequent text operations.
+     * @param f The new font. For example, 12-point Georgia bold.
      * @throws NullPointerException If <code>f</code> is null. Note that this is
      * not how most subclasses of <code>Graphics</code> treat null colors, they
      * instead silently ignore nulls.
@@ -249,7 +249,7 @@ public class MockGraphics extends Graphics {
             String excMsg = "Font should not be null";
             throw new NullPointerException(excMsg);
         }
-        // TODO: Write tests for this
+        this.currFont = f;
     }
 
     @Override
