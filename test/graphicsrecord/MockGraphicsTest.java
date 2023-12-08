@@ -56,7 +56,7 @@ public class MockGraphicsTest {
     public void testPrimaryConstructor() {
         int rgb = RANDOM.nextInt();
         Color color = new Color(rgb);
-        Font font = FONTS[FONTS.length - 1];
+        Font font = FONTS[TOTAL_NUMBER_OF_FONTS - 1];
         Graphics g = new MockGraphics(color, font);
         assertEquals(color, g.getColor());
         assertEquals(font, g.getFont());
@@ -159,7 +159,15 @@ public class MockGraphicsTest {
         System.out.println("\"" + excMsg + "\"");
     }
 
-    // TODO: Write test for setFont() with non-null parameter
+    @Test
+    void testSetFont() {
+        System.out.println("setFont");
+        Graphics g = new MockGraphics();
+        Font expected = FONTS[RANDOM.nextInt(TOTAL_NUMBER_OF_FONTS)];
+        g.setFont(expected);
+        Font actual = g.getFont();
+        assertEquals(expected, actual);
+    }
     
     @Test
     void testSetFontRejectsNullFont() {
