@@ -65,9 +65,15 @@ public class MockGraphics extends Graphics {
         // TODO: Write tests for this
     }
 
+    /**
+     * As there's not much point in creating a new mock graphics context, this
+     * function simply returns this very same mock graphics context.
+     * @return Simply this same graphics context. Note that this is not the
+     * behavior that is expected of most <code>Graphics</code> subclasses.
+     */
     @Override
     public Graphics create() {
-        return null;
+        return this;
     }
 
     @Override
