@@ -67,7 +67,7 @@ public class MockGraphics extends Graphics {
 
     @Override
     public Graphics create() {
-        throw new UnsupportedOperationException("Sorry, not implemented");
+        return null;
     }
 
     @Override
