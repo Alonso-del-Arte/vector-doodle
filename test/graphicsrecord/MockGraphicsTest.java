@@ -32,7 +32,7 @@ public class MockGraphicsTest {
 
     private static final int TOTAL_NUMBER_OF_FONTS = FONTS.length;
 
-    private static final Random RANDOM = new Random();
+    static final Random RANDOM = new Random();
 
     @Test
     void testCreate() {
