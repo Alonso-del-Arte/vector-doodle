@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Alonso del Arte
+ * Copyright (C) 2024 Alonso del Arte
  *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -38,9 +38,12 @@ public class GraphicsCommandRecord {
 
     private final Font currFont;
 
-    // TODO: Write tests for this
+    /**
+     * Gives the name of this command.
+     * @return The name of this command. For example, "setColor".
+     */
     public String getCommandName() {
-        return "SORRY, NOT IMPLEMENTED YET";
+        return this.commName;
     }
 
     // TODO: Write tests for this
