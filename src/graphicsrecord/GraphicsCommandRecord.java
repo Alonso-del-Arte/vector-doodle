@@ -46,9 +46,12 @@ public class GraphicsCommandRecord {
         return this.commName;
     }
 
-    // TODO: Write tests for this
+    /**
+     * Gives the current color.
+     * @return The current color. For example, <code>Color.GREEN</code>.
+     */
     public Color getCurrentColor() {
-        return Color.BLACK;
+        return this.currColor;
     }
 
     // TODO: Write tests for this
